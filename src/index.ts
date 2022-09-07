@@ -8,7 +8,7 @@ const programs = [
     command: 'mysql',
     description: 'Run MySQL container',
     action: () => {
-      exec('cd rdbms/mysql && docker-compose up --build -d', (err) => {
+      exec(`cd ${__dirname}/../dock/rdbms/mysql && docker-compose up --build -d`, (err) => {
         if (err) {
           throw err
         }
@@ -20,7 +20,7 @@ const programs = [
     command: 'postgres',
     description: 'Run Postgres container',
     action: () => {
-      exec('cd rdbms/postgres && docker-compose up --build -d', (err) => {
+      exec('cd ../dock/rdbms/postgres && docker-compose up --build -d', (err) => {
         if (err) {
           throw err
         }
@@ -32,7 +32,7 @@ const programs = [
     command: 'redis',
     description: 'Run Redis container',
     action: () => {
-      exec('cd cache/redis && docker-compose up --build -d', (err) => {
+      exec('cd ../dock/cache/redis && docker-compose up --build -d', (err) => {
         if (err) {
           throw err
         }
@@ -44,7 +44,7 @@ const programs = [
     command: 'cloud-beaver',
     description: 'Run Cloudbeaver',
     action: () => {
-      exec('cd ui/cloud-beaver && docker-compose up --build -d', (err) => {
+      exec('cd ../dock/ui/cloud-beaver && docker-compose up --build -d', (err) => {
         if (err) {
           throw err
         }
@@ -56,7 +56,7 @@ const programs = [
     command: 'redis-commander',
     description: 'Run Redis Commander',
     action: () => {
-      exec('cd ui/redis-commander && docker-compose up --build -d', (err) => {
+      exec('cd ../dock/ui/redis-commander && docker-compose up --build -d', (err) => {
         if (err) {
           throw err
         }

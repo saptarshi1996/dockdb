@@ -104,7 +104,6 @@ dist
 .tern-port
 
 
-src/rdbms/*/backup
-src/ui/*/backup
-src/cache/*/backup
-
+dock/rdbms/*/backup
+dock/ui/*/backup
+dock/cache/*/backup

@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+
+  postgres:
+
+    image: postgres
+
+    restart: always
+
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=test
+
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./backup:/var/lib/postgresql/data
+
+    expose:
+      - 5432
+
+    networks:
+      - database
+      - host
+
+networks:
+  database:
+    name: database
+
+  host:
