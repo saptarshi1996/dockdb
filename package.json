@@ -9,7 +9,7 @@
     "start": "node .",
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix",
-    "env-builder-dev": "npx nodemon src/index.ts"
+    "dev": "npx nodemon src/index.ts"
   },
   "bin": {
     "dockdb": "dist/index.js"
