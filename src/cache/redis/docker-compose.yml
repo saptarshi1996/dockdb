@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+
+  redis:
+
+    image: redis
+
+    restart: always
+
+    ports:
+      - '6379:6379'
+
+    expose:
+      - 6379
+    
+    volumes: 
+      - ./backup:/data
+
+    networks:
+      - database
+      - host
+
+networks:
+  database:
+    name: database
+
+  host:

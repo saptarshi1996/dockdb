@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  
+  cloud-beaver:
+
+    image: dbeaver/cloudbeaver
+
+    volumes:
+      - ./backup:/opt/cloudbeaver/workspace
+
+    ports:
+     - "8080:8978"
+
+    expose:
+      - 8080
+
+    networks:
+      - database
+      - host
+
+networks:
+  database:
+    name: database
+
+  host:
