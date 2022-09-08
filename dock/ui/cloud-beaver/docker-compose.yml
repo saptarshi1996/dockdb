@@ -7,7 +7,7 @@ services:
     image: dbeaver/cloudbeaver
 
     volumes:
-      - ./backup:/opt/cloudbeaver/workspace
+      - /var/lib/docker/volumes/dock-db-cloud-beaver:/opt/cloudbeaver/workspace
 
     ports:
      - "8080:8978"

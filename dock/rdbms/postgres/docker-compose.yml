@@ -16,7 +16,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./backup:/var/lib/postgresql/data
+      - /var/lib/docker/volumes/dock-db-pg:/var/lib/postgresql/data
 
     expose:
       - 5432

@@ -15,7 +15,7 @@ services:
       - 6379
     
     volumes: 
-      - ./backup:/data
+      - /var/lib/docker/volumes/dock-db-redis:/data
 
     networks:
       - database
