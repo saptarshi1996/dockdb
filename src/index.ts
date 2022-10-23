@@ -40,30 +40,6 @@ const programs = [
       })
     }
   },
-  {
-    command: 'cloud-beaver',
-    description: 'Run Cloudbeaver',
-    action: () => {
-      exec(`cd ${__dirname}/../dock/ui/cloud-beaver && docker-compose up --build -d`, (err) => {
-        if (err) {
-          throw err
-        }
-        console.log('Cloud Beaver launched successfully')
-      })
-    }
-  },
-  {
-    command: 'redis-commander',
-    description: 'Run Redis Commander',
-    action: () => {
-      exec(`cd ${__dirname}/../dock/ui/redis-commander && docker-compose up --build -d`, (err) => {
-        if (err) {
-          throw err
-        }
-        console.log('Redis Commander launched successfully')
-      })
-    }
-  }
 ]
 
 programs.forEach((programType) => {
