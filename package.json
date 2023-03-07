@@ -5,7 +5,6 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "prestart": "npm run build",
     "start": "node .",
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix",

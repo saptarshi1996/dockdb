@@ -8,36 +8,63 @@ const programs = [
     command: 'mysql',
     description: 'Run MySQL container',
     action: () => {
-      exec(`cd ${__dirname}/../dock/rdbms/mysql && docker-compose up --build -d`, (err) => {
-        if (err) {
-          throw err
-        }
-        console.log('MySQL Container launched successfully')
-      })
+      if ('root' in program.opts() && program.opts().root === true) {
+        exec(`cd ${__dirname}/../dock/rdbms/mysql && sudo docker-compose up --build -d`, (err) => {
+          if (err) {
+            throw err
+          }
+          console.log('MySQL Container launched successfully')
+        })
+      } else {
+        exec(`cd ${__dirname}/../dock/rdbms/mysql && docker-compose up --build -d`, (err) => {
+          if (err) {
+            throw err
+          }
+          console.log('MySQL Container launched successfully')
+        })
+      }
     }
   },
   {
     command: 'postgres',
     description: 'Run Postgres container',
     action: () => {
-      exec(`cd ${__dirname}/../dock/rdbms/postgres && docker-compose up --build -d`, (err) => {
-        if (err) {
-          throw err
-        }
-        console.log('Postgres Container launched successfully')
-      })
+      if ('root' in program.opts() && program.opts().root === true) {
+        exec(`cd ${__dirname}/../dock/rdbms/postgres && sudo docker-compose up --build -d`, (err) => {
+          if (err) {
+            throw err
+          }
+          console.log('Postgres Container launched successfully')
+        })
+      } else {
+        exec(`cd ${__dirname}/../dock/rdbms/postgres && docker-compose up --build -d`, (err) => {
+          if (err) {
+            throw err
+          }
+          console.log('Postgres Container launched successfully')
+        })
+      }
     }
   },
   {
     command: 'redis',
     description: 'Run Redis container',
     action: () => {
-      exec(`cd ${__dirname}/../dock/cache/redis && docker-compose up --build -d`, (err) => {
-        if (err) {
-          throw err
-        }
-        console.log('Redis Container launched successfully')
-      })
+      if ('root' in program.opts() && program.opts().root === true) {
+        exec(`cd ${__dirname}/../dock/cache/redis && sudo docker-compose up --build -d`, (err) => {
+          if (err) {
+            throw err
+          }
+          console.log('Redis Container launched successfully')
+        })
+      } else {
+        exec(`cd ${__dirname}/../dock/cache/redis && docker-compose up --build -d`, (err) => {
+          if (err) {
+            throw err
+          }
+          console.log('Redis Container launched successfully')
+        })
+      }
     }
   },
 ]
@@ -48,4 +75,4 @@ programs.forEach((programType) => {
     .description(programType.description)
 })
 
-program.parse()
+program.option('-r, --root', 'Run as sudo').parse()
