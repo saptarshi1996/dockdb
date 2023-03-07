@@ -1,6 +1,6 @@
 {
   "name": "dockdb",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "Dockerized databases and managers",
   "main": "dist/index.js",
   "scripts": {
